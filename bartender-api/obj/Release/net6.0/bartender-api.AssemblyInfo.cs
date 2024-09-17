@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bartender-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfc9185e434c58dbe841dc7f541be89309495114")]
 [assembly: System.Reflection.AssemblyProductAttribute("bartender-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bartender-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

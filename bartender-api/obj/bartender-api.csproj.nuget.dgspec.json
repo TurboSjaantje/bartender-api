@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daanv\\source\\repos\\bartender-api\\bartender-api\\bartender-api.csproj": {}
+    "C:\\Users\\daanv\\Source\\Repos\\TurboSjaantje\\bartender-api\\bartender-api\\bartender-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daanv\\source\\repos\\bartender-api\\bartender-api\\bartender-api.csproj": {
+    "C:\\Users\\daanv\\Source\\Repos\\TurboSjaantje\\bartender-api\\bartender-api\\bartender-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daanv\\source\\repos\\bartender-api\\bartender-api\\bartender-api.csproj",
+        "projectUniqueName": "C:\\Users\\daanv\\Source\\Repos\\TurboSjaantje\\bartender-api\\bartender-api\\bartender-api.csproj",
         "projectName": "bartender-api",
-        "projectPath": "C:\\Users\\daanv\\source\\repos\\bartender-api\\bartender-api\\bartender-api.csproj",
+        "projectPath": "C:\\Users\\daanv\\Source\\Repos\\TurboSjaantje\\bartender-api\\bartender-api\\bartender-api.csproj",
         "packagesPath": "C:\\Users\\daanv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daanv\\source\\repos\\bartender-api\\bartender-api\\obj\\",
+        "outputPath": "C:\\Users\\daanv\\Source\\Repos\\TurboSjaantje\\bartender-api\\bartender-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daanv\\AppData\\Roaming\\NuGet\\NuGet.Config",
