@@ -1,0 +1,11 @@
+@bartender_api_HostAddress = http://localhost:5263
+
+GET {{bartender_api_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{bartender_api_HostAddress}}/todos/1
+Accept: application/json
+
+###

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "52TXOZ6swGtSNiSr37PxRwIMIFZzZKJxYPgoHMEKfRw=",
+  "Source": "bartender-api",
+  "BasePath": "_content/bartender-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

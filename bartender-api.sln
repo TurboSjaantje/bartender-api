@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bartender-api", "bartender-api\bartender-api.csproj", "{530B5382-7767-4F35-9FCD-0E972ECA5C2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{530B5382-7767-4F35-9FCD-0E972ECA5C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530B5382-7767-4F35-9FCD-0E972ECA5C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530B5382-7767-4F35-9FCD-0E972ECA5C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530B5382-7767-4F35-9FCD-0E972ECA5C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0646379F-37EF-4445-8265-ED34C86660AC}
+	EndGlobalSection
+EndGlobal
