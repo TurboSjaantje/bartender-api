@@ -30,7 +30,7 @@ jobs:
 
       # Publish the project
       - name: Publish the project
-        run: dotnet publish -c Release -o ./publish_output
+        run: dotnet publish -c Release -o "./publish_output"
 
       # Upload artifact for deployment job
       - name: Upload artifact for deployment job
@@ -53,11 +53,6 @@ jobs:
         with:
           name: published-app
 
-      # Unzip the artifact
-      - name: Unzip artifact
-        run: |
-          Expand-Archive -Path published-app.zip -DestinationPath ./publish_output
-
       # Deploy to Azure Web App
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -65,5 +60,5 @@ jobs:
         with:
           app-name: 'bartender-api'
           slot-name: 'Production'
-          package: './publish_output'
+          package: './published-app'  # This is the folder downloaded, so point directly to it
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D74DE4BC63AB48DD957D13D802234B0E }}
