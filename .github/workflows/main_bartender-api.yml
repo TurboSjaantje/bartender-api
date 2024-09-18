@@ -51,7 +51,12 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: published-app  # This should match the name used in the upload step
+          name: published-app
+
+      # Unzip the artifact
+      - name: Unzip artifact
+        run: |
+          Expand-Archive -Path published-app.zip -DestinationPath ./publish_output
 
       # Deploy to Azure Web App
       - name: Deploy to Azure Web App
@@ -60,5 +65,5 @@ jobs:
         with:
           app-name: 'bartender-api'
           slot-name: 'Production'
-          package: './publish_output'  # Ensure this matches the folder structure from download
+          package: './publish_output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D74DE4BC63AB48DD957D13D802234B0E }}
