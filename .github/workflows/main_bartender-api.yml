@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy ASP.Net Core app to Azure Web App - bartender-api
 
 on:
@@ -11,33 +14,24 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Checkout the code
       - uses: actions/checkout@v4
 
-      # Set up .NET Core
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.x'
+          dotnet-version: '8.0.x'
 
-      # Restore dependencies
-      - name: Restore dependencies
-        run: dotnet restore
-
-      # Build the project
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
-      # Publish the project
-      - name: Publish the project
-        run: dotnet publish -c Release -o "./publish_output"
+      - name: dotnet publish
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/bartender-api"
 
-      # Upload artifact for deployment job
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: published-app
-          path: ./publish_output
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/bartender-api
 
   deploy:
     runs-on: windows-latest
@@ -47,18 +41,16 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
-      # Download the build artifact from the build job
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: published-app
-
-      # Deploy to Azure Web App
+          name: .net-app
+      
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'bartender-api'
           slot-name: 'Production'
-          package: './published-app'  # This is the folder downloaded, so point directly to it
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D74DE4BC63AB48DD957D13D802234B0E }}
