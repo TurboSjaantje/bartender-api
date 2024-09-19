@@ -77,9 +77,9 @@ namespace bartender_api.Controllers
         public async Task<ActionResult<User>> Register([FromBody] RegisterModel model)
         {
             // Check if user already exists
-            if (await _context.Users.AnyAsync(u => u.Username == model.Username))
+            if (await _context.Users.AnyAsync(u => u.Email == model.Email))
             {
-                return BadRequest("Username is already taken.");
+                return BadRequest("Email is already taken.");
             }
 
             // In a real app, you should hash the password before storing it
@@ -101,7 +101,7 @@ namespace bartender_api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             // Check if user exists
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == model.Username && u.Password == model.Password);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
 
             if (user == null)
             {
@@ -123,7 +123,7 @@ namespace bartender_api.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.Name, user.Email),
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7), // Token expiration time
