@@ -84,12 +84,12 @@ namespace bartender_api.Controllers
 
         private static string GetDrinkBottle(Drink drink, Configuration configuration)
         {
-            if (configuration.Drink1 == configuration.Drink1) return "Bottle1";
-            if (configuration.Drink2 == configuration.Drink2) return "Bottle2";
-            if (configuration.Drink3 == configuration.Drink3) return "Bottle3";
-            if (configuration.Drink4 == configuration.Drink4) return "Bottle4";
-            if (configuration.Drink5 == configuration.Drink5) return "Bottle5";
-            if (configuration.Drink6 == configuration.Drink6) return "Bottle6";
+            if (drink.Id == configuration.Drink1.Id) return "Bottle1"; 
+            if (drink.Id == configuration.Drink2.Id) return "Bottle2"; 
+            if (drink.Id == configuration.Drink3.Id) return "Bottle3"; 
+            if (drink.Id == configuration.Drink4.Id) return "Bottle4"; 
+            if (drink.Id == configuration.Drink5.Id) return "Bottle5"; 
+            if (drink.Id == configuration.Drink6.Id) return "Bottle6"; 
             return "No Bottle";
         }
     }
