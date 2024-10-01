@@ -3,8 +3,10 @@
     public class DrinkWithPercentage
     {
         public int Id { get; set; } 
+        public int DrinkId { get; set; }
         public Drink Drink { get; set; }
         public float Percentage { get; set; }
-        public List<MocktailCombination> MocktailCombinations { get; set; }
+        public int MocktailCombinationId { get; set; }
+        public MocktailCombination MocktailCombination { get; set; }
     }
 }
