@@ -32,15 +32,19 @@ namespace bartender_api.Controllers
         [Route("{id}")]
         public async Task<ActionResult<MocktailCombination>> GetMocktailCombinationById(int id)
         {
-            var mocktail = await _context.MocktailCombinations.FindAsync(id);
+            var mocktail = await _context.MocktailCombinations
+                                        .Include(x => x.Drinks)
+                                        .ThenInclude(y => y.Drink)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
 
             if (mocktail == null)
             {
                 return NotFound();
             }
 
-            return mocktail;
+            return Ok(mocktail);
         }
+
 
         [HttpPost, Authorize]
         public async Task<ActionResult<MocktailCombination>> PostMocktailCombination(MocktailCombinationInput mocktail)
@@ -153,6 +157,8 @@ namespace bartender_api.Controllers
                 this.Percentage = percentage;
             }
         }
+
+
 
     }
 }
