@@ -20,7 +20,14 @@ namespace bartender_api.Controllers
         [HttpGet, Authorize]
         public async Task<ActionResult<Configuration>> GetConfiguration()
         {
-            return _context.Configuration.FirstOrDefault();
+            return _context.Configuration
+                .Include(x => x.Drink1)
+                .Include(x => x.Drink2)
+                .Include(x => x.Drink3)
+                .Include(x => x.Drink4)
+                .Include(x => x.Drink5)
+                .Include(x => x.Drink6)
+                .FirstOrDefault();
         }
 
         [HttpPut, Authorize]

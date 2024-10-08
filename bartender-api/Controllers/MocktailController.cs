@@ -72,8 +72,11 @@ namespace bartender_api.Controllers
 
             _context.MocktailCombinations.Add(newMocktailCombination);
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetMocktailCombination", new { id = newMocktailCombination.Id }, newMocktailCombination);
+
+            // Change "GetMocktailCombination" to "GetMocktailCombinationById"
+            return CreatedAtAction("GetMocktailCombinationById", new { id = newMocktailCombination.Id }, newMocktailCombination);
         }
+
 
         [HttpDelete("{id}"), Authorize]
         public async Task<IActionResult> DeleteMocktailCombination(int id)
@@ -133,13 +136,13 @@ namespace bartender_api.Controllers
 
         public class MocktailCombinationInput
         {
-            public int Id { get; set; }
+            //public int Id { get; set; }
             public string Name { get; set; }
             public List<DrinkWithPercentageInput> Drinks { get; set; }
 
-            public MocktailCombinationInput(int id, string name, List<DrinkWithPercentageInput> drinks)
+            public MocktailCombinationInput(string name, List<DrinkWithPercentageInput> drinks)
             {
-                this.Id = id;
+                //this.Id = id;
                 this.Name = name;
                 this.Drinks = drinks;
             }
