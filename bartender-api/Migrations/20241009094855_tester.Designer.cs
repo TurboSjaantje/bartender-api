@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using bartender_api.Data;
 
@@ -10,9 +11,11 @@ using bartender_api.Data;
 namespace bartender_api.Migrations
 {
     [DbContext(typeof(BartenderApiDbcontext))]
-    partial class BartenderApiDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20241009094855_tester")]
+    partial class tester
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

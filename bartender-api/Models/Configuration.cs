@@ -4,6 +4,8 @@
     {
         public int Id { get; set; } 
 
+        public bool makingDrink { get; set; }
+
         public int Drink1Id { get; set; }
         public Drink? Drink1 { get; set; }
 
